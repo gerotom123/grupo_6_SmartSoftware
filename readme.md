@@ -9,7 +9,7 @@ Aquí les dejaremos unas páginas de referencia en cuanto al estilo de ropa que 
 https://fearofgod.com/
 https://row.bape.com/
 https://www.off---white.com
-https://www.endclothing.com/
+https://ghettoshop.es/
 https://www.palaceskateboards.com/
 
 El motivo de la elección de las anteriores referencias es para tener una idea de diseño de nuestra aplicacion web en general. Por ejemplo , se puede basar el diseño propio de nuestro sitio con la estructura semántica de dichos sitios web.
