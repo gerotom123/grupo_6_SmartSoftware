@@ -10,3 +10,6 @@ app.listen(3000, ()=>{
 app.get('/', (req,res)=>{
     res.sendFile(__dirname + '/views/home.html');
 });
+app.get('/login', (req,res)=>{
+    res.sendFile(__dirname + '/login.html');
+});
