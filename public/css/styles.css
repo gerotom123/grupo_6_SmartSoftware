@@ -5,8 +5,8 @@
     box-sizing: border-box;
     font-family: 'poppins',sans-serif;
 }
-body{
-    background: #1abc9c;
+body.loginbody{
+    background: #a6c5c0;
     overflow: hidden;
 }
 .container{
@@ -21,7 +21,7 @@ margin: 170px auto;
 }
 .wrapper .title{
     line-height: 90px;
-    background: #16a085;
+    background: #429e8c;
     text-align: center;
     border-radius: 5px 5px 0 0;
     color: #fff;
@@ -99,4 +99,92 @@ text-decoration: none;
 }
 .wrapper form .signup-link a:hover{
     text-decoration: underline;
+}
+/*CSS DEL HOME___________________________________________________________________________________*/
+/*Dispositivos moviles*/
+@media (max-width: 425px){
+    .searchiconhome{display: none;}
+    input.searchbarhome{display: none;}
+    .loginregisterhome{display: none;} 
+    div.loginregisterhome{
+        position: absolute;
+        left: 60vw;
+    }
+    img.imglogo{
+        width: 35vw;
+        height: 12vh;
+        position: absolute;
+        left: 63vw;
+        top: 1vh;
+    }
+    a.solidbarhome{
+position: absolute;
+left: 12vw;
+top: 5vh;
+    }
+}
+@media (min-width: 768px){
+    .solidbarhome{
+        display: none;
+    }
+    div.loginregisterhome{
+        position: absolute;
+        left: 83.5vw; 
+    }
+body.homebody{
+    display: flex;
+    padding-bottom: 3vh;
+    border-bottom: 1px solid grey;
+}
+img.imglogo{
+    width: 30vw;
+    height: 20vh;
+}
+input.searchbarhome{
+    position: absolute;
+    top: 10vh;
+    left: 30vw;
+    width: 45vw;
+    padding-left: 0.4vw;
+    margin-left: 2vw;
+}
+a.searchiconhome{
+    position: absolute;
+    left: 74vw;
+    top: 10vh;
+}
+.loginregisterhome{
+    position: absolute;
+    left: 83vw;
+    top: 10vh;
+}
+.registerhomebutton,.loginhomebutton,.shopiconhome{
+    text-decoration: none;
+}
+.registerhomebutton:hover,.loginhomebutton:hover,.shopiconhome:hover{
+text-decoration: underline;
+}
+}
+/*Para dispositivos moviles*/
+
+@media (max-width: 768px){
+    .searchiconhome{
+        position: absolute;
+        left: 71.4vw;
+        top: 9.84vh;
+    }
+    input.searchbarhome{
+        padding-right: 7vw;
+    }
+    .loginregisterhome{
+        left: 29vw;
+        font-size: 2vw;
+        position: absolute;
+    }
+}
+@media (min-width: 1024px){
+    a.searchiconhome{
+        position: absolute;
+        left: 75.5vw;
+    }
 }
