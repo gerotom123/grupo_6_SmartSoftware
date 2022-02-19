@@ -5,6 +5,12 @@
     font-family: 'poppins',sans-serif;
     
 }
+:root{
+    --verde :#16a085;
+    --verde-claro:#afede1;
+    --gris-primario :#a7a7a8;
+
+}
 html{
     font-size: 62.5%;
 }
@@ -13,6 +19,7 @@ html{
     display: grid;
     grid-template-columns: auto 1fr auto;
     grid-template-rows: auto repeat(2, 1fr) auto;
+    padding: 1rem;
 }
 
 header{
@@ -20,45 +27,99 @@ header{
     
 }
 
-.main-carrito{
-    grid-column:1/4;
-    grid-row:2/5;
-
-}
-
 header .header-carrito{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    background-color: var(--verde);
     padding: 1rem;
 }
 
 .main-carrito{
+    grid-column:1/4;
+    grid-row:2/5;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    /* background-color: var(--gris-primario);  */
 }
 
-.main-carrito-encabezado{
-    
-}
+
 .main-carrito-titulo{
     width: 100%;
     text-align: center;
+    color:white;
 }
 
 .main-carrito-subtitulos{
    display: flex;
    justify-content: space-between;
 }
-
-.main-carrito-descripcion{
-    display: flex;
-    justify-content: space-between;
+.main-carrito-subtitulos p{
+    text-align: center;
+    width: 100%;
 }
 
+.main-productos{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.main-carrito-productos{
+    gap: 1rem;
+    /* display: flex;
+    flex-direction: column;
+    overflow-y: auto;    */
+}
+
+.main-carrito-descripcion{
+    box-shadow: 0px 10px 10px -6px var(--verde);
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-radius: 1.5rem;
+    
+}
+.main-carrito-descripcion p{
+    text-align: left;
+    flex:1;
+    width: fit-content;
+    
+}
+.main-carrito-descripcion img{
+    text-align: left;
+    flex:2
+}
+.main-carrito-descripcion img{
+    width: 30%;
+    height: 30%;
+    
+}
+.footer-slider{
+    width: 95%;
+    overflow: hidden;
+    margin: auto;
+}
+.footer-productos{
+    display: flex;
+
+}
+ .footer-recomendados img{
+    width: 50%;
+    height: 50%;
+}  
+/* 
 .footer-recomendados{
     display: flex;
     flex-direction: column;
     grid-column: 1/4;
+    background-color: var(--verde-claro);
     
 }
 
@@ -66,11 +127,18 @@ header .header-carrito{
     flex: 1;
     width: 100%;
     text-align: center;
+    margin-bottom: 1rem;
+    color: white;
 }
 
 .footer-productos{
+
     display: flex;
 }
 .footer-producto{
     text-align: center;
-}
+    box-shadow: 0px 10px 10px -6px black;
+
+}*/
+
+
