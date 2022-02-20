@@ -110,12 +110,11 @@ text-decoration: none;
         position: absolute;
         left: 60vw;
     }
-    img.imglogo{
-        width: 35vw;
-        height: 12vh;
+    p.logo{
+    font-size: 20px;
         position: absolute;
         left: 63vw;
-        top: 1vh;
+        top: 20vh;
     }
     a.solidbarhome{
 position: absolute;
@@ -134,10 +133,6 @@ top: 5vh;
         position: absolute;
         left: 83.5vw; 
     }
-img.imglogo{
-    width: 30vw;
-    height: 20vh;
-}
 input.searchbarhome{
     position: absolute;
     top: 10vh;
@@ -193,7 +188,7 @@ header.headerhome{
     margin: auto;
     background-color: white;
     width: 70vw;
-    padding: 0vw 23vw;   
+    padding: 0vw 15vw;   
 }
 ul{
     list-style-type: none
@@ -203,7 +198,10 @@ ul.sliderhome{
     margin: 0px;
     padding: 0px;
     width: 30vw;
-    height: 12vh;
+    height: 66vh;
+    position:relative;
+    top: 2vh;
+    left: 4vw;
 }
 ul.sliderhome li{
     position: absolute;
@@ -220,7 +218,7 @@ ul.sliderhome li:first-child{
 }
 ul.menuhome{
     position: relative;
-    top:64vh;
+    top:62vh;
     left: 3.6vw;
     display:flex;
     justify-content: space-around;
@@ -235,7 +233,61 @@ width: 10vw;
 height: 10vh;
 font-size: 20px;
 border-radius: 80%;
+bottom: 45vh;
+position: relative;
 }
 ul.sliderhome li:target{
     opacity: 1;
+}   
+ul li img{
+    width: 30vw;
+    height: 66vh;
+    position: relative;
+    left: 4vw;
+    top: 2vh;
+    background-color: #F6F6F6;
+}
+section.productoshome article img{
+    width: 25vw;
+    height: 60vh;
+}
+section.productoshome article{
+    height: 80vh;
+}
+section article img{
+    background-color: #F6F6F6;
+}
+section article:hover{
+        cursor: pointer;
+    }
+body.homebody{
+    background-color: #FFFFFF;
+    background: url(https://www.yonar.com.ar/images/3.png);
+}
+section.productoshome{
+    display: flex;
+    position: relative;
+    top: 35vh;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+section.productoshome article p.nameemp{
+    font-family: Bebas Neue, sans-serif;
+    font-size: 1.4vw;
+}
+section.productoshome article p.price{
+    font-family: Bebas Neue, sans-serif;
+    font-size: 1.1vw;
+    color: #adadad;
+    font-weight: 100;
+}
+section.productoshome article p.namecloth{
+    font-family: Bebas Neue, sans-serif;
+    font-size: 1.2vw;
+}
+div.containersliderhome{
+    background: url(https://www.yonar.com.ar/images/3.png);
+}
+ul.sliderhome li{
+    background: url(https://www.yonar.com.ar/images/3.png);
 }
