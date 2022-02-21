@@ -102,7 +102,70 @@ text-decoration: none;
 }
 /*CSS DEL HOME___________________________________________________________________________________*/
 /*Dispositivos moviles*/
+@media (min-width: 320px){
+    p.logo{
+        font-size: 10vw;
+            position: absolute;
+            left: 52vw;
+            top: 2.9vh;
+            z-index: 1;
+            width: 10vw;
+        }
+    section.productoshome article p.nameemp{
+        font-family: Bebas Neue, sans-serif;
+        font-size: 3.4vw;
+    }
+    section.productoshome article p.price{
+        font-family: Bebas Neue, sans-serif;
+        font-size: 3.1vw;
+        color: #adadad;
+        font-weight: 100;
+    }
+    section.productoshome article p.namecloth{
+        font-size: 2.9vw;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    section.productoshome{
+        top: 6vh;
+    }
+    section.productoshome article img{
+        width: 80vw;
+        height: 50vh;
+    }
+    .menuhome li a{
+        color: white;
+        text-decoration: none;
+        background-color: #b6c2c0;
+        padding: 10px 20px;
+        width: 10vw;
+        height: 10vh;
+        font-size: 13px;
+        border-radius: 80%;
+        bottom: 65vh;
+        left: -3vw;
+        position: relative;
+        }
+    ul li img{
+        width: 57vw;
+        height: 47vh;
+        position: relative;
+        left: -9vw;
+        top: 7vh;
+        background-color: #F6F6F6;
+    }
+}
 @media (max-width: 425px){
+    section.productoshome {
+        display: flex;
+        position: relative;
+        top: 7vh;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    section.productoshome article {
+        height: 52vh;
+        margin-bottom: 8vh;
+    }
     .searchiconhome{display: none;}
     input.searchbarhome{display: none;}
     .loginregisterhome{display: none;} 
@@ -110,19 +173,74 @@ text-decoration: none;
         position: absolute;
         left: 60vw;
     }
-    p.logo{
-    font-size: 20px;
-        position: absolute;
-        left: 63vw;
-        top: 20vh;
-    }
     a.solidbarhome{
 position: absolute;
 left: 12vw;
 top: 5vh;
     }
 }
+@media (min-width: 425px){
+    
+    .searchiconhome{
+        position: relative;
+        left: 71.4vw;
+        top: -2.49vh;
+    }
+}
 @media (min-width: 768px){
+    section.productoshome{
+    display: flex;
+    position: relative;
+    top: 35vh;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+    section.productoshome article img{
+        width: 30vw;
+        height: 60vh;
+    }
+    section.productoshome article p.nameemp{
+        font-family: Bebas Neue, sans-serif;
+        font-size: 2.4vw;
+    }
+    section.productoshome article p.price{
+        font-family: Bebas Neue, sans-serif;
+        font-size: 2.1vw;
+        color: #adadad;
+        font-weight: 100;
+    }
+    section.productoshome article p.namecloth{
+        font-size: 1.9vw;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    p.logo{
+        font-size: 5vw;
+            position: relative;
+            left: 7vw;
+            top: 1.9vh;
+            z-index: 1;
+            width: 10vw;
+        } 
+    .menuhome li a{
+color: white;
+text-decoration: none;
+background-color: #b6c2c0;
+padding: 10px 20px;
+width: 10vw;
+height: 10vh;
+font-size: 20px;
+border-radius: 80%;
+bottom: 45vh;
+position: relative;
+}
+    ul li img{
+    width: 30vw;
+    height: 66vh;
+    position: relative;
+    left: 1vw;
+    top: 2vh;
+    background-color: #F6F6F6;
+}
     header.headerhome{
         border-bottom: solid 1px grey;
     }
@@ -131,20 +249,16 @@ top: 5vh;
     }
     div.loginregisterhome{
         position: absolute;
-        left: 83.5vw; 
+        left: 82.5vw; 
+        top: 5vh;
     }
 input.searchbarhome{
     position: absolute;
-    top: 10vh;
-    left: 30vw;
+    top: 5vh;
+    left: 28vw;
     width: 45vw;
     padding-left: 0.4vw;
     margin-left: 2vw;
-}
-a.searchiconhome{
-    position: absolute;
-    left: 74vw;
-    top: 10vh;
 }
 .loginregisterhome{
     position: absolute;
@@ -161,13 +275,10 @@ text-decoration: underline;
 /*Para dispositivos moviles*/
 
 @media (max-width: 768px){
-    .searchiconhome{
-        position: absolute;
-        left: 71.4vw;
-        top: 9.84vh;
-    }
+    
     input.searchbarhome{
         padding-right: 7vw;
+
     }
     .loginregisterhome{
         left: 29vw;
@@ -175,14 +286,27 @@ text-decoration: underline;
         position: absolute;
     }
 }
+
 @media (min-width: 1024px){
+    section.productoshome article p.nameemp{
+        font-family: Bebas Neue, sans-serif;
+        font-size: 1.4vw;
+    }
+    section.productoshome article p.price{
+        font-family: Bebas Neue, sans-serif;
+        font-size: 1.1vw;
+        color: #adadad;
+        font-weight: 100;
+    }
+    section.productoshome article p.namecloth{
+        font-size: 0.9vw;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
     a.searchiconhome{
         position: absolute;
-        left: 75.5vw;
+        left: 72.7vw;
+        top: 5vh;
     }
-}
-header.headerhome{
-    display: flex;
 }
 .containersliderhome{
     margin: auto;
@@ -219,43 +343,18 @@ ul.sliderhome li:first-child{
 ul.menuhome{
     position: relative;
     top:62vh;
-    left: 3.6vw;
+    left: 2.6vw;
     display:flex;
     justify-content: space-around;
 
 }
-.menuhome li a{
-color: white;
-text-decoration: none;
-background-color: #b6c2c0;
-padding: 10px 20px;
-width: 10vw;
-height: 10vh;
-font-size: 20px;
-border-radius: 80%;
-bottom: 45vh;
-position: relative;
-}
+
 ul.sliderhome li:target{
     opacity: 1;
 }   
-ul li img{
-    width: 30vw;
-    height: 66vh;
-    position: relative;
-    left: 4vw;
-    top: 2vh;
-    background-color: #F6F6F6;
-}
-section.productoshome article img{
-    width: 25vw;
-    height: 60vh;
-}
-section.productoshome article{
-    height: 80vh;
-}
+
 section article img{
-    background-color: #F6F6F6;
+    background-color: #f6f6f6;
 }
 section article:hover{
         cursor: pointer;
@@ -264,30 +363,22 @@ body.homebody{
     background-color: #FFFFFF;
     background: url(https://www.yonar.com.ar/images/3.png);
 }
-section.productoshome{
-    display: flex;
-    position: relative;
-    top: 35vh;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-section.productoshome article p.nameemp{
-    font-family: Bebas Neue, sans-serif;
-    font-size: 1.4vw;
-}
-section.productoshome article p.price{
-    font-family: Bebas Neue, sans-serif;
-    font-size: 1.1vw;
-    color: #adadad;
-    font-weight: 100;
-}
-section.productoshome article p.namecloth{
-    font-family: Bebas Neue, sans-serif;
-    font-size: 1.2vw;
-}
+
+
 div.containersliderhome{
     background: url(https://www.yonar.com.ar/images/3.png);
+    position: relative;
 }
 ul.sliderhome li{
     background: url(https://www.yonar.com.ar/images/3.png);
 }
+.logo{
+    font-size: 5vw;
+    display: flex;
+    position: relative;
+        left: 6vw;
+        top: 1vh;
+        color: black;
+text-decoration: underline;
+font-family: Bebas Neue, sans-serif;
+    }
