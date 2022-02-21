@@ -1,0 +1,36 @@
+body{
+	padding-top: 25vh;
+}
+
+#content-wrapper{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.column{
+	width: 600px;
+	padding: 10px;
+
+}
+
+#featured{
+	max-width: 300px;
+	max-height: 600px;
+	object-fit: cover;
+	cursor: pointer;
+	border: 2px solid black;
+    justify-content: center;
+}
+
+@media (min-width: 361px){
+    #featured{
+        max-width: 500px;
+        max-height: 400px;
+        object-fit: cover;
+        cursor: pointer;
+        border: 1px solid black;
+        justify-content: center;
+    }
+}
