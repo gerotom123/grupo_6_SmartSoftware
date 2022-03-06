@@ -11,7 +11,7 @@ router.get('/carrito', controlador.carrito);
 
 router.get('/register', controlador.register);
 
-router.get('/productodetalle', controlador.productoDetalle);
+router.get('/productodetalle/:id', controlador.productoDetalle);
 
 
 
