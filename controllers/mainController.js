@@ -3,7 +3,13 @@ const path = require('path');
 
 const productos = {
     '1': {
-        'url': '/img/img1',
+        'url': '/img/img1.png',
+        'nombre': 'Black Camo',
+        'precio': 1750,
+        'descripcion': 'pantalon negro, talle L',
+    },
+    '1': {
+        'url': '/img/img1.png',
         'nombre': 'Black Camo',
         'precio': 1750,
         'descripcion': 'pantalon negro, talle L',
@@ -25,7 +31,7 @@ const controlador = {
 },
 
     productoDetalle:(req,res)=>{
-        let  productodetalles = req.params.id;
+        let  productodetalles = req.params.id;       
         res.render('productodetalle', { 
             'productos':productos[productodetalles]});
 },
