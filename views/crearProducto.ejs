@@ -5,25 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kaisei+Opti&family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/crearProducto.css">
 </head>
-<body>
-    <form action="/productoCreado" method="POST">
-        <label for="nombre">Nombre de producto</label>
-        <input type="text" name="nombreProducto" id="nombre">
-
-        <label for="descripcion">Descripcion</label>
-        <input type="text" name="descripcionProducto" id="descripcion">
-
-        <label for="img"> ruta de la imagen </label>
-        <input type="text" name="nombreimg" id="img">
-
-        <label for="categoria"> Categoria</label>
-        <input type="text" name="categia"  id="categoria">
-
-        <label for="precio">Precio</label>
-        <input type="text" id="precio">
-
-        <button type="submit">Enviar</button>
-    </form>
+<body>  
+    <%- include ('./partials/head') %>  
+    <main class="register">
+        <form action="/" method="POST">
+            <div class="form">
+                <h1 class="">Crear Producto</h1>
+                    <div class="grupo">
+                        <input type="text" name="name" id="name" required><span class="barra"></span>
+                        <label for="">Nombre del producto</label>
+                    </div>
+                    <div class="grupo">
+                        <input type="text" name="description" id="description" required><span class="barra"></span>
+                        <label for="">Descripción</label>
+                    </div>
+                    <div class="grupo">
+                        <h4>Elegí una imagen</h4>
+                            <input type="file" name="image" id="image" required><span class="barra"></span>
+                    </div>
+                    <div class="grupo">
+                        <input type="text" name="category" id="category" required><span class="barra"></span>
+                        <label for="">Categoría</label>
+                    </div>
+                    <div class="grupo">
+                        <input type="text" name="talle" id="talle" required><span class="barra"></span>
+                        <label for="">Talles</label>
+                    </div>
+                    <div class="grupo">
+                        <input type="text" name="price" id="price" required><span class="barra"></span>
+                        <label for="">Precio</label>
+                    </div>
+                    <div>
+                        <button class="enviar" type="submit">Enviar </button>
+                    </div>
+                    <div>
+                        <button class="borrar" type="submit">Borrar </button>
+                    </div>
+            
+        </div>
+        </form>
+    </main>
+    <footer>
+    </footer>
 </body>
 </html>

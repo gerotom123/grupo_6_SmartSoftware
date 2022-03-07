@@ -28,8 +28,8 @@ const controlador = {
     },
     productoCreado:(req,res) =>{
         console.log(req.body);
-        res.redirect('/')
-    },
+        res.redirect('/');
+    }
 }
 
 module.exports = controlador;
