@@ -6,7 +6,7 @@
     font-family: 'poppins',sans-serif;
 }
 body.loginbody{
-    background-color: #FFFFFF;
+    background: url(https://www.yonar.com.ar/images/3.png);
     overflow: hidden;
 }
 .container{
@@ -21,7 +21,7 @@ margin: 170px auto;
 }
 .wrapper .title{
     line-height: 90px;
-    background: #429e8c;
+    background: #bdc0bf;
     text-align: center;
     border-radius: 5px 5px 0 0;
     color: #fff;
@@ -47,7 +47,7 @@ font-size: 16px;
 transition: all 0.3s ease;
 }
 form .row input:focus{
-border-color: #16a085;
+border-color: #d6dad9;
 box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
 }
 .wrapper form .row i{
@@ -56,9 +56,8 @@ box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
     height: 100%;
     color: #fff;
     font-size: 18px;
-    background: #16a085;
-    border: 1px solid #16a085;
-    border-radius: 5px 0 0 5px;
+    background: #bdc0bf;
+    border: 1px solid #bdc0bf;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,13 +79,13 @@ text-decoration: none;
     font-size: 20px;
     font-weight: 500;
     padding-left: 0px;
-    background: #16a085;
-    border: 1px solid #16a085;
+    background: #979999;
+    border: 1px solid #979999;
     cursor: pointer;
     
 }
 form .button input:hover{
-    background: #12876f;
+    background: #c6c9c8;
 }
 .wrapper form .signup-link{
  text-align: center;
@@ -94,7 +93,7 @@ margin-top: 20px;
 font-size: 17px;
 }
 .wrapper form .signup-link a{
-color: #16a085;
+color: #bdc0bf;
 text-decoration: none;
 }
 .wrapper form .signup-link a:hover{

@@ -5,6 +5,7 @@ const mainRouter = require('./routes/mainRouter');
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }))
+app.use(express.json());
 app.set('view engine', 'ejs');
 //app.set('views', './views');
 app.use(mainRouter);

@@ -13,6 +13,10 @@ router.get('/register', controlador.register);
 
 router.get('/productodetalle/:id', controlador.productoDetalle);
 
+router.get('/crearProducto', controlador.crearProducto);
+
+router.post('/crearProducto', controlador.productoCreado);
+
 
 
 module.exports = router;

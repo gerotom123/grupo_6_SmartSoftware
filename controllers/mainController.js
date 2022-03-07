@@ -1,20 +1,7 @@
 const express = require('express');
 const path = require('path');
 
-const productos = {
-    '1': {
-        'url': '/img/img1.png',
-        'nombre': 'Black Camo',
-        'precio': 1750,
-        'descripcion': 'pantalon negro, talle L',
-    },
-    '1': {
-        'url': '/img/img1.png',
-        'nombre': 'Black Camo',
-        'precio': 1750,
-        'descripcion': 'pantalon negro, talle L',
-    }  
-}
+const productos = require('../archivos/listaProductos')
 
 const controlador = {
     home:(req,res)=>{
@@ -35,7 +22,14 @@ const controlador = {
         res.render('productodetalle', { 
             'productos':productos[productodetalles]});
 },
-
+    crearProducto:(req,res) =>{
+        console.log(req.body);
+        res.render('crearProducto');
+    },
+    productoCreado:(req,res) =>{
+        console.log(req.body);
+        res.redirect('/')
+    },
 }
 
 module.exports = controlador;
