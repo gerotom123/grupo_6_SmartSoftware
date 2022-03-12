@@ -38,12 +38,16 @@
       </ul>
     </div>
     <section class="productoshome">
-      <article><a href="/productodetalle/1"><img src="/img/img1.png" alt="product1"><p class="nameemp">Heavenly</p><p class="namecloth"></p>Black Camo<p class="price">$1750</p></a></article>
-      <article><a href="/productodetalle/2"><img src="/img/img2.png" alt="product2"><p class="nameemp">Heavenly</p><p class="namecloth">Monster Trouser</p><p class="price">$2000</p></a></article>
-      <article><a href="/productodetalle/3"><img src="/img/img3.png" alt="product3"><p class="nameemp">Heavenly</p><p class="namecloth">Ice Short</p><p class="price">$1550</p></a></article>
-      <article><a href="/productodetalle/4"><img src="/img/img4.png" alt="product4"><p class="nameemp">Heavenly</p><p class="namecloth">Retro Shirt</p><p class="price">$1800</p></a></article>
-      <article><a href="/productodetalle/5"><img src="/img/img5.png" alt="product5"><p class="nameemp">Heavenly</p><p class="namecloth">Black&White Camo</p><p class="price">$2000</p></a></article>
-      <article><a href="/productodetalle/6"><img src="/img/img6.png" alt="product6"><p class="nameemp">Heavenly</p><p class="namecloth">Shark Jumper</p><p class="price">$3250</p></a></article>
+      <% for(let i=1; i < productos.length; i++) {  %>
+        <article>
+          <a href=<%=`/productodetalle/${productos[i]}`%>>
+          <img src=<%=`${productos[i].url}`%> alt=<%=`${productos[i].nombre}`%>>
+          <p class="nameemp"><%=`${productos[i].nombre}`%></p><p class="namecloth">
+          </p><%=`${productos[i].nombre}`%><p class="price">$<%= productos[i].precio %></p>
+        </a>
+      </article>
+      <% } %>     
+     
     </section>
     <footer></footer>
 </body>

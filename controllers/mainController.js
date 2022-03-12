@@ -4,8 +4,10 @@ const path = require('path');
 const productos = require('../archivos/listaProductos')
 
 const controlador = {
-    home:(req,res)=>{
-       res.render('home');
+    home:(req,res)=>{       
+       res.render('home', {
+           'productos': productos
+       });
 },
     login:(req,res)=>{
         res.render('login');
