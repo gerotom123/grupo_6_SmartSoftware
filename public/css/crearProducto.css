@@ -2,7 +2,7 @@
 
 body{
     background: url(https://www.yonar.com.ar/images/3.png);
-    overflow: hidden;
+    overflow: auto;
 }
 
 .register{
@@ -100,7 +100,7 @@ input:focus~.barra::before{
     display: block;
     width: 80%;
     margin: 10px auto;
-    color: #ebebeb;
+    color: white;
     height: 40px;
     font-size: 16px;
     cursor: pointer;
@@ -119,7 +119,7 @@ input:focus~.barra::before{
     cursor: pointer;
 }
 
-/*tablet*/
+ /* tablet */
 @media (min-width: 361px){
 
 
@@ -133,12 +133,12 @@ input:focus~.barra::before{
 }
 
 
-/*pc*/
+/* pc */
 @media (min-width: 769px){
     
     .footer{
         display:block;
 
     }
-}
+} 
 
