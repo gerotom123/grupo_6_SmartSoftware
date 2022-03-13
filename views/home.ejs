@@ -38,7 +38,7 @@
       </ul>
     </div>
     <section class="productoshome">
-      <% for(let i=1; i < productos.length; i++) {  %>
+      <% for(let i=0; i < productos.length; i++) {  %>
         <article>
           <a href=<%=`/productodetalle/${i}`%>>
           <img src=<%=`${productos[i].url}`%> alt=<%=`${productos[i].nombre}`%>>

@@ -1,12 +1,15 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs')
 
-const productos = require('../archivos/listaProductos')
+const productsFilePath = path.join(__dirname, '../archivos/listaProductos.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')).productos;
+
 
 const controlador = {
-    home:(req,res)=>{       
+    home:(req,res)=>{           
        res.render('home', {
-           'productos': productos
+           'productos': products
        });
 },
     login:(req,res)=>{
@@ -22,14 +25,19 @@ const controlador = {
     productoDetalle:(req,res)=>{
         let  productodetalles = req.params.id;       
         res.render('productodetalle', { 
-            'productos':productos[productodetalles]});
+            'productos':products[productodetalles]});
 },
-    crearProducto:(req,res) =>{
-        console.log(req.body);
+    crearProducto:(req,res) =>{ 
+        console.log(products)     
         res.render('crearProducto');
     },
     productoCreado:(req,res) =>{
         console.log(req.body);
+        let documento = req.body
+        products.push(documento)
+        console.log(products)
+        // fs.writeFileSync(documento,req.body)
+        
         res.redirect('/');
     }
 }
