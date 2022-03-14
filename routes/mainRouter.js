@@ -5,7 +5,7 @@ const path = require('path')
 
 const controlador = require('../controllers/mainController')
 
-multer
+// multer
 const storage = multer.diskStorage({
     destination:function (req,file,cb){
         cb(null, './public/img')

@@ -1,9 +1,10 @@
 const express = require('express');
 const path = require('path');
-const fs = require('fs')
+const fs = require('fs');
+const { stringify } = require('querystring');
 
 const productsFilePath = path.join(__dirname, '../archivos/listaProductos.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')).productos;
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 const controlador = {
@@ -37,6 +38,7 @@ const controlador = {
         let documento = req.body
         documento.url = filePath
         products.push(documento)
+        fs.writeFileSync(productsFilePath,JSON.stringify(products))
         console.log(products)        
         res.redirect('/');
     }
