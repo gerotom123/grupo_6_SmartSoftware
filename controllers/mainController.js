@@ -33,9 +33,9 @@ const controlador = {
     },
     productoCreado:(req,res) =>{
         console.log(req.file)
-        const fileName = `/img/${req.file.filename}`
+        const filePath = `/img/${req.file.filename}`
         let documento = req.body
-        documento.url = fileName
+        documento.url = filePath
         products.push(documento)
         console.log(products)        
         res.redirect('/');
