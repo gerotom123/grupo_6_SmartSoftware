@@ -33,13 +33,11 @@ const controlador = {
     },
     productoCreado:(req,res) =>{
         console.log(req.file)
-        const fileName = req.file.originalname
+        const fileName = `/img/${req.file.filename}`
         let documento = req.body
         documento.url = fileName
         products.push(documento)
-        console.log(products)
-        // fs.writeFileSync(documento,req.body)
-        
+        console.log(products)        
         res.redirect('/');
     }
 }
