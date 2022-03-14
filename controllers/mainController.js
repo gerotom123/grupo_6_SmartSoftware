@@ -32,8 +32,10 @@ const controlador = {
         res.render('crearProducto');
     },
     productoCreado:(req,res) =>{
-        console.log(req.body);
+        console.log(req.file)
+        const fileName = req.file.originalname
         let documento = req.body
+        documento.url = fileName
         products.push(documento)
         console.log(products)
         // fs.writeFileSync(documento,req.body)
