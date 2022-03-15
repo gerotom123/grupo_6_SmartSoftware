@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kaisei+Opti&family=Oswald&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Document</title>
 </head>
 <body class="homebody">
- <%- include('.partials/header.html') %>
+  <form class="searchbar">
+    <input name="searchbarhome" type="text" class="searchbarhome" placeholder="Buscá por producto, marca, categoría ..."></form>
+    <button type="submit"></button>
+  </form>
+  <%- include ('./partials/head') %>
+<div class="loginregisterhome"><a class="loginhomebutton" href="/login">Login</a><a class="registerhomebutton" href="/register">/Register</a> <a class="shopiconhome" href="/carrito"><i class="fas fa-shopping-basket"></i></a></div>
+
     <section class="sliderhome"></section>
     <div class="containersliderhome">
       <ul class="sliderhome">
@@ -32,12 +38,16 @@
       </ul>
     </div>
     <section class="productoshome">
-      <article><a href="/Black-Camo"><img src="/img/img1.png" alt="product1"><p class="nameemp">Heavenly</p><p class="namecloth"></p>Black Camo<p class="price">$1750</p></a></article>
-      <article><a href="/Monster-Trouser"><img src="/img/img2.png" alt="product2"><p class="nameemp">Heavenly</p><p class="namecloth">Monster Trouser</p><p class="price">$2000</p></a></article>
-      <article><a href="/Ice-Short"><img src="/img/img3.png" alt="product3"><p class="nameemp">Heavenly</p><p class="namecloth">Ice Short</p><p class="price">$1550</p></a></article>
-      <article><a href="/Retro-Shirt"><img src="/img/img4.png" alt="product4"><p class="nameemp">Heavenly</p><p class="namecloth">Retro Shirt</p><p class="price">$1800</p></a></article>
-      <article><a href="/Black&White-Camo"><img src="/img/img5.png" alt="product5"><p class="nameemp">Heavenly</p><p class="namecloth">Black&White Camo</p><p class="price">$2000</p></a></article>
-      <article><a href="/Shark-Jumper"><img src="/img/img6.png" alt="product6"><p class="nameemp">Heavenly</p><p class="namecloth">Shark Jumper</p><p class="price">$3250</p></a></article>
+      <% for(let i=0; i < productos.length; i++) {  %>
+        <article>
+          <a href=<%=`/productodetalle/${i}`%>>
+          <img src=<%=`${productos[i].url}`%> alt=<%=`${productos[i].nombre}`%>>
+          <p class="nameemp"><%=`${productos[i].nombre}`%></p><p class="namecloth">
+          </p><%=`${productos[i].nombre}`%><p class="price">$<%= productos[i].precio %></p>
+        </a>
+      </article>
+      <% } %>     
+     
     </section>
     <footer></footer>
 </body>
