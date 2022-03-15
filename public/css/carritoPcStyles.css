@@ -10,6 +10,9 @@
     --verde-claro:#afede1;
     --gris-primario :#a7a7a8;
     --gris-secundario-btn:#464d62;
+    --blanco : #f0fff4;
+    --verde-azul:#b5ede4;
+    --gris-suave:#688c8c;
 
 }
 html{
@@ -19,12 +22,13 @@ html{
     height: 100vh;
     display: grid;
     grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto repeat(2, 1fr) auto;
+    grid-template-rows:  repeat(6, 1fr)  ;
     padding: 1rem;
 }
 
 header{
     grid-column: 1/4;
+    grid-row: 1/2;
     position: relative;
     
 }
@@ -36,14 +40,41 @@ header .header-carrito{
     padding: 1rem;
 }
 
+header .projects ul{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+header .projects ul li {
+    list-style: none;
+}
+header .projects ul a{
+    color :var(--blanco);
+}
+
 .main-carrito{
     grid-column:1/4;
-    grid-row:2/5;
+    grid-row:2/7;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    position: relative;
     /* background-color: var(--gris-primario);  */
 }
+.main-carrito::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  .main-carrito::-webkit-scrollbar-track {
+    background: var(--gris-suave);  
+    border-radius: 10px;      /* color of the tracking area */
+  }
+  
+  .main-carrito::-webkit-scrollbar-thumb {
+    background-color: var(--verde-azul);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+  /* creates padding around scroll thumb */
+  }
 
 
 .main-carrito-titulo{
@@ -64,10 +95,10 @@ header .header-carrito{
 .main-productos{
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+     display: flex;
+    justify-content: space-around;
+     align-items: center;
+    flex-wrap: wrap;
     
 }
 .main-carrito-productos{
@@ -81,8 +112,10 @@ header .header-carrito{
     box-shadow: 0px 10px 10px -6px var(--verde);
     display: flex;
     flex-direction: column;
-    width: 90%;
-    height: 100%;
+    /* width: 15rem;
+    height: 15rem; */
+    width: auto;
+    height: auto;
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
@@ -100,12 +133,13 @@ header .header-carrito{
     flex:2
 }
 .main-carrito-descripcion img{
-    width: 100%;
-    height: auto;
+ 
+    width: 20%;
+    height: 20%;
     
 }
 .footer-recomendados{
-    border-radius: 10px;
+    background-color: var(--verde);
     width: auto;
     height: auto;
     display: flex;
@@ -115,11 +149,13 @@ header .header-carrito{
     /* position: absolute; */
  
 }
+.footer-recomendados h2{
+    font-size: 3rem;
+    color:var(--blanco);
+}
 .footer-slider{
-    border-radius: 0.625rem;
-    width: 100%;
-    height: auto;
-    /* width: 25%; */
+    border-radius: 1rem;
+    width: 25%;
     margin: auto;
     overflow: hidden;
     box-shadow: 6px 6px 12px 6px rgba(0, 0, 0, 0.349);
@@ -153,48 +189,12 @@ header .header-carrito{
     84%{margin-left: -249%;}
     100%{margin-left: -249%;}
 }
-/* .footer-slider{
-    width: 95%;
-    overflow: hidden;
-    margin: auto;
-}
-.footer-productos{
-    display: flex;
-
-}
- .footer-recomendados img{
-    width: 50%;
-    height: 50%;
-}  
-
-.footer-recomendados{
-    display: flex;
-    flex-direction: column;
-    grid-column: 1/4;
-    background-color: var(--verde-claro);
-    
-}
-
-.footer-recomendados h2{
-    flex: 1;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 1rem;
-    color: white;
-}
-
-.footer-productos{
-
-    display: flex;
-}
-.footer-producto{
-    text-align: center;
-    box-shadow: 0px 10px 10px -6px black;
-
-} */
 
 /* /////////////// */
-.dropdown {
+header button{
+    display: none;
+}
+/* .dropdown {
     position: absolute;
     right: 0;
     top: 0;
@@ -257,7 +257,7 @@ header .header-carrito{
     /* background: none;
     text-decoration: none;
     border: none; */
-    position: absolute;
+   /* position: absolute;
     right: 0;
     color: white;
     background-color:var(--gris-secundario-btn);
@@ -272,4 +272,4 @@ header .header-carrito{
     pointer-events: all;
     transform: translateY(0px);
   }
-
+ */
