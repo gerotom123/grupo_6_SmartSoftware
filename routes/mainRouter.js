@@ -32,6 +32,8 @@ router.get('/crearProducto', controlador.crearProducto);
 router.post('/crearProducto',upload.single('url') ,controlador.productoCreado);
 router.get('/eliminarProducto', controlador.eliminarProducto);
 router.post('/eliminacionProducto', controlador.eliminacionProducto);
+router.get('/edicion/:id',controlador.edicionProductos);
+router.put('/edicion/:id',controlador.editProducto);
 
 
 

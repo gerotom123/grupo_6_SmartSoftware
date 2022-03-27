@@ -27,14 +27,16 @@ const controlador = {
     productoDetalle:(req,res)=>{
         let  productodetalles = req.params.id;       
         res.render('productodetalle', { 
-            'productos':products[productodetalles]});
+            'productos':products[productodetalles],
+            id: productodetalles
+        });
 },
     crearProducto:(req,res) =>{ 
-        console.log(products)     
+            
         res.render('crearProducto');
     },
     productoCreado:(req,res) =>{
-        console.log(req.file)
+     
         const filePath = `/img/${req.file.filename}`
         let documento = req.body
         documento.url = filePath
@@ -46,11 +48,27 @@ const controlador = {
         res.render('eliminarProducto')
     },
     eliminacionProducto:(req,res)=>{
-        const productoAEliminar = req.body.nombre
-       
+        const productoAEliminar = req.body.nombre       
         const elimacionProducto = products.filter(item => item.nombre !==productoAEliminar)
-        console.log(elimacionProducto)
+        
         fs.writeFileSync(productsFilePath,JSON.stringify(elimacionProducto))
+        res.redirect('/')
+    },
+    edicionProductos:(req,res)=>{
+        const idProducto = req.params.id;
+    
+        res.render('editProducto',{
+            producto:products[idProducto],
+            id:idProducto
+        })
+    },
+    editProducto: (req,res)=>{
+        const idProducto = req.params.id;
+        const camposModificados = req.body;         
+        products[idProducto].nombre=camposModificados.nombre
+        products[idProducto].precio=camposModificados.precio
+        products[idProducto].descripcion= camposModificados.descripcion
+        fs.writeFileSync(productsFilePath,JSON.stringify(products))       
         res.redirect('/')
     }
 }
