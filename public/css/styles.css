@@ -5,6 +5,12 @@
     box-sizing: border-box;
     font-family: 'poppins',sans-serif;
 }
+:root{
+--titulos-color:black;
+--price-color:#adadad;
+--namecloth-color:rgb(92, 92, 92);
+}
+
 body.loginbody{
     background: url(https://www.yonar.com.ar/images/3.png);
     overflow: hidden;
@@ -21,6 +27,9 @@ margin: 170px auto;
     width: 100%;
     background: #fff;
     border-radius: 5px;
+}
+p.namecloth{
+    color: rgb(92, 92, 92);
 }
 .wrapper .title{
     line-height: 90px;
@@ -105,6 +114,9 @@ text-decoration: none;
 /*CSS DEL HOME___________________________________________________________________________________*/
 /*Dispositivos moviles*/
 @media (min-width: 320px){
+    article{
+        padding-bottom: 3vh;
+    }
     p.logo{
         font-size: 10vw;
             position: absolute;
@@ -116,15 +128,17 @@ text-decoration: none;
     section.productoshome article p.nameemp{
         font-family: Bebas Neue, sans-serif;
         font-size: 3.4vw;
+        color: black;
     }
     section.productoshome article p.price{
         font-family: Bebas Neue, sans-serif;
         font-size: 3.1vw;
-        color: #adadad;
+        color:var(--price-color);
         font-weight: 100;
     }
     section.productoshome article p.namecloth{
         font-size: 2.9vw;
+        color: rgb(92, 92, 92);
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
     section.productoshome{
@@ -191,6 +205,9 @@ top: 5vh;
     }
 }
 @media (min-width: 768px){
+    ul.sliderhome img{
+        height: 50vh;
+    }
     section.productoshome{
     display: flex;
     position: relative;
@@ -210,18 +227,19 @@ top: 5vh;
     section.productoshome article p.price{
         font-family: Bebas Neue, sans-serif;
         font-size: 2.1vw;
-        color: #adadad;
+        color: var(--price-color);
         font-weight: 100;
     }
     section.productoshome article p.namecloth{
         font-size: 1.9vw;
+        color: rgb(92, 92, 92);
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
     p.logo{
         font-size: 5vw;
             position: relative;
             left: 7vw;
-            top: 1.9vh;
+            top: -1vh;
             z-index: 1;
             width: 10vw;
         } 
@@ -238,10 +256,10 @@ bottom: 45vh;
 position: relative;
 }
     ul li img{
-    width: 30vw;
-    height: 66vh;
+    width: 27vw;
+    height: 50vh;
     position: relative;
-    left: 1vw;
+    left: 2vw;
     top: 2vh;
     background-color: #F6F6F6;
 }
@@ -253,8 +271,8 @@ position: relative;
     }
     div.loginregisterhome{
         position: absolute;
+        color: black;
         left: 82.5vw; 
-        top: 5vh;
     }
 input.searchbarhome{
     position: absolute;
@@ -267,10 +285,11 @@ input.searchbarhome{
 .loginregisterhome{
     position: absolute;
     left: 83vw;
-    top: 10vh;
+    top: 5vh;
 }
 .registerhomebutton,.loginhomebutton,.shopiconhome{
     text-decoration: none;
+    color: black;
 }
 .registerhomebutton:hover,.loginhomebutton:hover,.shopiconhome:hover{
 text-decoration: underline;
@@ -292,18 +311,22 @@ text-decoration: underline;
 }
 
 @media (min-width: 1024px){
+    section.productoshome{
+        top: 8vh;
+    }
     section.productoshome article p.nameemp{
         font-family: Bebas Neue, sans-serif;
-        font-size: 1.4vw;
+        font-size: 1.5vw;
     }
     section.productoshome article p.price{
         font-family: Bebas Neue, sans-serif;
         font-size: 1.1vw;
-        color: #adadad;
+        color: var(--price-color);
         font-weight: 100;
     }
     section.productoshome article p.namecloth{
         font-size: 0.9vw;
+        color: rgb(92, 92, 92);
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
     a.searchiconhome{
@@ -346,7 +369,7 @@ ul.sliderhome li:first-child{
 }
 ul.menuhome{
     position: relative;
-    top:62vh;
+    top:40vh;
     left: 2.6vw;
     display:flex;
     justify-content: space-around;
