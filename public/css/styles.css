@@ -48,6 +48,9 @@ p.namecloth{
     margin-bottom:15px;
     position: relative;
 }
+a.logologin1{
+    width: 10vw;
+}
 .wrapper form .row input{
 height: 100%;
 width: 100%;
@@ -234,6 +237,17 @@ top: 5vh;
         font-size: 1.9vw;
         color: rgb(92, 92, 92);
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    a.logologin{
+        font-size: 5vw;
+        position: relative;
+        left: 42.5vw;
+        top: 0vh;
+        z-index: 1;
+        width: 10vw;
+        color: black;
+        text-decoration: underline;
+        font-family: Bebas Neue, sans-serif;
     }
     p.logo{
         font-size: 5vw;
