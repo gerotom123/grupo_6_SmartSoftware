@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kaisei+Opti&family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+<body class="homebody">
+  <form class="searchbar">
+    <input name="searchbarhome" type="text" class="searchbarhome" placeholder="Buscá por producto, marca, categoría ..."></form>
+    <button type="submit"></button>
+  </form>
+  <%- include ('./partials/head') %>
+<div class="loginregisterhome"><a class="loginhomebutton" href="/login">Login</a><a class="registerhomebutton" href="/register">/Register</a> <a class="shopiconhome" href="/carrito"><i class="fas fa-shopping-basket"></i></a></div>
+
+    <section class="sliderhome"></section>
+    <div class="containersliderhome">
+      <ul class="sliderhome">
+        <li id="slide1"><img class="img1" src="/img/img1.png" alt="imagen1"></li>
+        <li id="slide2"><img class="img2" src="/img/img2.png" alt="imagen2"></li>
+        <li id="slide3"><img class="img3" src="/img/img3.png" alt="imagen3"></li>
+        <li id="slide4"><img class="img4" src="/img/img4.png" alt="imagen4"></li>
+        <li id="slide5"><img class="img5" src="/img/img5.png" alt="imagen5"></li>
+        <li id="slide6"><img class="img6" src="/img/img6.png" alt="imagen6"></li>
+      </ul>
+      <ul class="menuhome">
+<li><a href="#slide1">1</a></li>
+<li><a href="#slide2">2</a></li>
+<li><a href="#slide3">3</a></li>
+<li><a href="#slide4">4</a></li>
+<li><a href="#slide5">5</a></li>
+<li><a href="#slide6">6</a></li>
+      </ul>
+    </div>
+    <section class="productoshome">
+      <% for(let i=0; i < productos.length; i++) {  %>
+        <article>
+          <a href=<%=`/productodetalle/${i}`%>>
+          <img src=<%=`${productos[i].url}`%> alt=<%=`${productos[i].nombre}`%>>
+          <p class="nameemp"><%=`${productos[i].nombre}`%></p><p class="namecloth">
+          <%=`${productos[i].nombre}`%></p><p class="price">$<%= productos[i].precio %></p>
+        </a>
+      </article>
+      <% } %>     
+     
+    </section>
+    <footer></footer>
+</body>
+</html> 
