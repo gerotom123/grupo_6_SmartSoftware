@@ -97,7 +97,10 @@ text-decoration: none;
     background: #979999;
     border: 1px solid #979999;
     cursor: pointer;
-    
+}
+.wrapper form .button input:hover{
+    background:#4ab9ff;
+    border: 1px solid #4ab9ff
 }
 form .button input:hover{
     background: #c6c9c8;

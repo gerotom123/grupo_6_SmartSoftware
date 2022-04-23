@@ -13,6 +13,7 @@ body{
   background: url(https://www.yonar.com.ar/images/3.png);
 }
 .wrapper{
+  margin-top: 11vh;
   position: relative;
   max-width: 430px;
   width: 100%;
@@ -43,6 +44,9 @@ body{
 div.input-box input.Input-submit:hover{
   background-color:#4ab9ff ;
 }
+input.submitrowbutton:hover{
+  background-color:#4ab9ff
+}
 .wrapper form .input-box{
   height: 52px;
   margin: 18px 0;
@@ -62,11 +66,12 @@ form .input-box input{
 }
 .input-box input:focus,
 .input-box input:valid{
-  border-color: #b6c2c0;
+  border-color: #4ab9ff;
 }
 
 header.headerhome{
   border-bottom: solid 1px grey;
+  width: 100vw;
 }
 a.logologin{
   font-size: 5vw;
