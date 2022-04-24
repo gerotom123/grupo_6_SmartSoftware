@@ -24,7 +24,7 @@ const storageUser = multer.diskStorage({
 })
 const uploadUserImg= multer({storage:storageUser});
 const upload = multer({storage})
-console.log(upload)
+
 
 router.get('/', controlador.home);
 

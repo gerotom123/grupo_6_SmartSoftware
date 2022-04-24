@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const bcrypt = require('bcryptjs');
 const fs = require('fs');
 const { stringify } = require('querystring');
 const { CLIENT_RENEG_LIMIT } = require('tls');
@@ -56,6 +57,7 @@ const controlador = {
         const filePath = `/img/${req.file.originalname}`
         let documento = req.body
         documento.url = filePath
+        documento.contrasena = bcrypt.hashSync(req.body.contrasena,10)
         users.push(documento)
         fs.writeFileSync(usersFilePath,JSON.stringify(users))            
         res.redirect('/');
