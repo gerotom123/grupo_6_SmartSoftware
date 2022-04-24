@@ -16,8 +16,17 @@ const storage = multer.diskStorage({
         cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`)
     }
 })
-
+const storageUser = multer.diskStorage({
+    destination:function (req,file,cb){
+        cb(null, './public/userImg')
+    },
+    filename: function(req,file,cb){
+        cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`)
+    }
+})
+const uploadUserImg= multer({storage:storageUser});
 const upload = multer({storage})
+
 
 router.get('/', controlador.home);
 
@@ -45,7 +54,8 @@ router.post('/eliminacionProducto', controlador.eliminacionProducto);
 router.get('/edicion/:id',controlador.edicionProductos);
 
 router.put('/edicion/:id',controlador.editProducto);
-
+router.get('/crearUsuario',controlador.crearUsuario)
+router.post('/crearUsuario',uploadUserImg.single('foto'),controlador.usuarioCreado)
 
 
 module.exports = router;

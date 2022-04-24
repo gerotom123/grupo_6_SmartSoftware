@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const bcrypt = require('bcryptjs');
 const fs = require('fs');
 const {check, validationResult, body} = require('express-validator')
 const { stringify } = require('querystring');
@@ -8,9 +9,14 @@ const { CLIENT_RENEG_LIMIT } = require('tls');
 const productsFilePath = path.join(__dirname, '../archivos/listaProductos.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const usersFilePath = path.join(__dirname, '../archivos/listaUsuarios.json');
+const users= JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
+
 
 const controlador = {
-    home:(req,res)=>{           
+    home:(req,res)=>{
+        console.log(users)    
+        console.log(fs.readFileSync(usersFilePath, 'utf-8'))       
        res.render('home', {
            'productos': products
        });
@@ -36,6 +42,10 @@ const controlador = {
             
         res.render('crearProducto');
     },
+    crearUsuario:(req,res) =>{ 
+            
+        res.render('crearUsuario');
+    },
     productoCreado:(req,res) =>{
      
         const filePath = `/img/${req.file.filename}`
@@ -43,6 +53,16 @@ const controlador = {
         documento.url = filePath
         products.push(documento)
         fs.writeFileSync(productsFilePath,JSON.stringify(products))            
+        res.redirect('/');
+    },
+    usuarioCreado:(req,res) =>{
+     console.log(req.file)
+        const filePath = `/img/${req.file.originalname}`
+        let documento = req.body
+        documento.url = filePath
+        documento.contrasena = bcrypt.hashSync(req.body.contrasena,10)
+        users.push(documento)
+        fs.writeFileSync(usersFilePath,JSON.stringify(users))            
         res.redirect('/');
     },
     eliminarProducto: (req,res)=>{
@@ -75,7 +95,7 @@ const controlador = {
     processLogin: (req,res) =>{
         let errors = validationResult(req);
         if(errors.isEmpty()){
-        const usersJSON = fs.readFileSync('users.json',{ encoding:'utf8'})
+        const usersJSON = fs.readFileSync('listaUsuarios.json',{ encoding:'utf-8'})
         let users;
         if (usersJSON == ''){
             users = []
