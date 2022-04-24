@@ -1,15 +1,18 @@
 const express = require('express');
 const app = express();
+const mainRouter = require('./routes/mainRouter');
+const methodOverride = require('method-override')
+
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json());
+app.set('view engine', 'ejs');
+app.use(methodOverride('_method'))
+app.use(mainRouter);
+
 
 
 app.listen(3000, ()=>{
     console.log('Servidor funcionando');
 });
 
-app.get('/', (req,res)=>{
-    res.sendFile(__dirname + '/views/home.html');
-});
-app.get('/login', (req,res)=>{
-    res.sendFile(__dirname + '/views/login.html');
-});

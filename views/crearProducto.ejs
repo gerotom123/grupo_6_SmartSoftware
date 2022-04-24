@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kaisei+Opti&family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/crearProducto.css">
+</head>
+<body>  
+    <%- include ('./partials/head') %>  
+    <main class="register">
+        <form class="form" action="/crearProducto" method="POST" enctype="multipart/form-data">
+            
+                <h1 class="">Crear Producto</h1>
+                    <div class="grupo">
+                        <input type="text" name="nombre" id="name" required><span class="barra"></span>
+                        <label for="">Nombre del producto</label>
+                    </div>
+                    <div class="grupo">
+                        <input type="text" name="descripcion" id="description" required><span class="barra"></span>
+                        <label for="">Descripción</label>
+                    </div>
+                    <div class="grupo">
+                        <h4>Elegí una imagen</h4>
+                            <input type="file" name="url" id="image" required><span class="barra"></span>
+                    </div>
+                    <div class="grupo">
+                        <input type="text" name="category" id="category" required><span class="barra"></span>
+                        <label for="">Categoría</label>
+                    </div>
+                    <div class="grupo">
+                        <input type="text" name="talle" id="talle" required><span class="barra"></span>
+                        <label for="">Talles</label>
+                    </div>
+                    <div class="grupo">
+                        <input type="text" name="precio" id="price" required><span class="barra"></span>
+                        <label for="">Precio</label>
+                    </div>
+                    <div>
+                        <button class="enviar" type="submit">Enviar </button>
+                    </div>
+                    <div>
+                        <button class="borrar" type="submit">Borrar </button>
+                    </div>
+            
+        
+        </form>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>

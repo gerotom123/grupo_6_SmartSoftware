@@ -1,0 +1,144 @@
+/*vista de crear producto*/
+
+body{
+    background: url(https://www.yonar.com.ar/images/3.png);
+    overflow: auto;
+}
+
+.register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    padding: 48px 0 0;
+}
+
+h1{
+    text-align: center;
+    font-weight: 700;
+}
+form{
+    background: white;
+    padding: 40px 0;
+    box-shadow: 0 0 6px rgb(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+.form{
+    width: 100%;
+    margin: auto;
+}
+
+form .grupo{
+    position: relative;
+    margin: 45px;
+}
+input{
+    background: none;
+    color: #c6c6c6;
+    font-size: 10px;
+    padding: 5px 5px 5px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid;
+}
+
+input:focus{
+    outline: none;
+    color: #5e5d5d;
+}
+
+.grupo label{
+    color: #5e5d5d;
+    font-size: 16px;
+    position: absolute;
+    left: 10px;
+    top: -5px;
+    transition: 0.5s ease-in-out all;
+    pointer-events: none;
+}
+
+input:focus~label,
+input:valid~label{
+    top: -14px;
+    font-size: 10px;
+    color: #050505;
+}
+
+.barra{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.barra::before{
+    content: "";
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    transition: 0.3 ease width;
+
+}
+
+input:focus~.barra::before{
+    width: 100%;
+}
+
+.div-input{
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.enviar{
+    font-family: 'roboto';
+    background: #9b9b9c;
+    border: none;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    color: white;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.borrar{
+    font-family: 'roboto';
+    background: whitesmoke;
+    border: none;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    color: rgb(75, 73, 73);
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+ /* tablet */
+@media (min-width: 361px){
+
+
+    form{
+        width: 80%;
+    }
+
+    .enviar{
+        width: 50%;
+    }
+}
+
+
+/* pc */
+@media (min-width: 769px){
+    
+    .footer{
+        display:block;
+
+    }
+} 
+

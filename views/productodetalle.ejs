@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product Details</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/Productdetailstyles.css">
+</head>
+<body>
+	<div id="content-wrapper">
+		<div class="column">
+			<img id=featured src=<%=productos.url%>>
+		</div>	
+		<div class="otros">
+			<h1> <%= productos.nombre %> </h1>
+			<h3>$<%=productos.precio %></h3>			
+			<p><%=productos.descripcion%></p>
+	
+			<input value=1 type="number">
+			<a class="btn btn-dark" href="#">Add to Cart</a>
+			<form action="/edicion/<%=id%>" method="get">
+				<button class="enviar" type="submit">Editar </button>
+			</form>
+		</div>
+
+	</div>
+</body>
+</html>

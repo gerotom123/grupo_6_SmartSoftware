@@ -5,9 +5,18 @@
     box-sizing: border-box;
     font-family: 'poppins',sans-serif;
 }
+:root{
+--titulos-color:black;
+--price-color:#adadad;
+--namecloth-color:rgb(92, 92, 92);
+}
+
 body.loginbody{
-    background: #a6c5c0;
+    background: url(https://www.yonar.com.ar/images/3.png);
     overflow: hidden;
+}
+.productoshome p{
+    width: 100%;
 }
 .container{
 max-width: 440px;
@@ -19,9 +28,12 @@ margin: 170px auto;
     background: #fff;
     border-radius: 5px;
 }
+p.namecloth{
+    color: rgb(92, 92, 92);
+}
 .wrapper .title{
     line-height: 90px;
-    background: #429e8c;
+    background: #bdc0bf;
     text-align: center;
     border-radius: 5px 5px 0 0;
     color: #fff;
@@ -36,6 +48,9 @@ margin: 170px auto;
     margin-bottom:15px;
     position: relative;
 }
+a.logologin1{
+    width: 10vw;
+}
 .wrapper form .row input{
 height: 100%;
 width: 100%;
@@ -47,7 +62,7 @@ font-size: 16px;
 transition: all 0.3s ease;
 }
 form .row input:focus{
-border-color: #16a085;
+border-color: #d6dad9;
 box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
 }
 .wrapper form .row i{
@@ -56,9 +71,8 @@ box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
     height: 100%;
     color: #fff;
     font-size: 18px;
-    background: #16a085;
-    border: 1px solid #16a085;
-    border-radius: 5px 0 0 5px;
+    background: #bdc0bf;
+    border: 1px solid #bdc0bf;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,13 +94,16 @@ text-decoration: none;
     font-size: 20px;
     font-weight: 500;
     padding-left: 0px;
-    background: #16a085;
-    border: 1px solid #16a085;
+    background: #979999;
+    border: 1px solid #979999;
     cursor: pointer;
-    
+}
+.wrapper form .button input:hover{
+    background:#4ab9ff;
+    border: 1px solid #4ab9ff
 }
 form .button input:hover{
-    background: #12876f;
+    background: #c6c9c8;
 }
 .wrapper form .signup-link{
  text-align: center;
@@ -94,7 +111,7 @@ margin-top: 20px;
 font-size: 17px;
 }
 .wrapper form .signup-link a{
-color: #16a085;
+color: #bdc0bf;
 text-decoration: none;
 }
 .wrapper form .signup-link a:hover{
@@ -103,6 +120,9 @@ text-decoration: none;
 /*CSS DEL HOME___________________________________________________________________________________*/
 /*Dispositivos moviles*/
 @media (min-width: 320px){
+    article{
+        padding-bottom: 3vh;
+    }
     p.logo{
         font-size: 10vw;
             position: absolute;
@@ -114,19 +134,22 @@ text-decoration: none;
     section.productoshome article p.nameemp{
         font-family: Bebas Neue, sans-serif;
         font-size: 3.4vw;
+        color: black;
     }
     section.productoshome article p.price{
         font-family: Bebas Neue, sans-serif;
         font-size: 3.1vw;
-        color: #adadad;
+        color:var(--price-color);
         font-weight: 100;
     }
     section.productoshome article p.namecloth{
         font-size: 2.9vw;
+        color: rgb(92, 92, 92);
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
     section.productoshome{
         top: 6vh;
+        text-decoration: none;
     }
     section.productoshome article img{
         width: 80vw;
@@ -184,10 +207,13 @@ top: 5vh;
     .searchiconhome{
         position: relative;
         left: 71.4vw;
-        top: -2.49vh;
+        top: -0.49vh;
     }
 }
 @media (min-width: 768px){
+    ul.sliderhome img{
+        height: 50vh;
+    }
     section.productoshome{
     display: flex;
     position: relative;
@@ -202,22 +228,35 @@ top: 5vh;
     section.productoshome article p.nameemp{
         font-family: Bebas Neue, sans-serif;
         font-size: 2.4vw;
+        text-decoration: none;
     }
     section.productoshome article p.price{
         font-family: Bebas Neue, sans-serif;
         font-size: 2.1vw;
-        color: #adadad;
+        color: var(--price-color);
         font-weight: 100;
     }
     section.productoshome article p.namecloth{
         font-size: 1.9vw;
+        color: rgb(92, 92, 92);
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    a.logologin{
+        font-size: 5vw;
+        position: relative;
+        left: 42.5vw;
+        top: 0vh;
+        z-index: 1;
+        width: 10vw;
+        color: black;
+        text-decoration: underline;
+        font-family: Bebas Neue, sans-serif;
     }
     p.logo{
         font-size: 5vw;
             position: relative;
             left: 7vw;
-            top: 1.9vh;
+            top: -1vh;
             z-index: 1;
             width: 10vw;
         } 
@@ -234,10 +273,10 @@ bottom: 45vh;
 position: relative;
 }
     ul li img{
-    width: 30vw;
-    height: 66vh;
+    width: 27vw;
+    height: 50vh;
     position: relative;
-    left: 1vw;
+    left: 2vw;
     top: 2vh;
     background-color: #F6F6F6;
 }
@@ -249,8 +288,8 @@ position: relative;
     }
     div.loginregisterhome{
         position: absolute;
+        color: black;
         left: 82.5vw; 
-        top: 5vh;
     }
 input.searchbarhome{
     position: absolute;
@@ -263,10 +302,11 @@ input.searchbarhome{
 .loginregisterhome{
     position: absolute;
     left: 83vw;
-    top: 10vh;
+    top: 5vh;
 }
 .registerhomebutton,.loginhomebutton,.shopiconhome{
     text-decoration: none;
+    color: black;
 }
 .registerhomebutton:hover,.loginhomebutton:hover,.shopiconhome:hover{
 text-decoration: underline;
@@ -288,23 +328,27 @@ text-decoration: underline;
 }
 
 @media (min-width: 1024px){
+    section.productoshome{
+        top: 8vh;
+    }
     section.productoshome article p.nameemp{
         font-family: Bebas Neue, sans-serif;
-        font-size: 1.4vw;
+        font-size: 1.5vw;
     }
     section.productoshome article p.price{
         font-family: Bebas Neue, sans-serif;
         font-size: 1.1vw;
-        color: #adadad;
+        color: var(--price-color);
         font-weight: 100;
     }
     section.productoshome article p.namecloth{
         font-size: 0.9vw;
+        color: rgb(92, 92, 92);
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
     a.searchiconhome{
         position: absolute;
-        left: 72.7vw;
+        left: 73.9vw;
         top: 5vh;
     }
 }
@@ -342,7 +386,7 @@ ul.sliderhome li:first-child{
 }
 ul.menuhome{
     position: relative;
-    top:62vh;
+    top:40vh;
     left: 2.6vw;
     display:flex;
     justify-content: space-around;
@@ -381,4 +425,7 @@ ul.sliderhome li{
         color: black;
 text-decoration: underline;
 font-family: Bebas Neue, sans-serif;
+    }
+    section.productoshome article a{
+        text-decoration: none;
     }
