@@ -31,6 +31,12 @@ margin: 170px auto;
 p.namecloth{
     color: rgb(92, 92, 92);
 }
+input.recordameinput,label.recordamelabel{
+    position: relative;
+    color:#707070;
+    left: 0.2vw;
+    top: 0.45vh;
+}
 .wrapper .title{
     line-height: 90px;
     background: #bdc0bf;
@@ -63,11 +69,13 @@ transition: all 0.3s ease;
 }
 form .row input:focus{
 border-color: #d6dad9;
-box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
+box-shadow: inset 0px 0px 2px 2px #bdc0bf;
 }
 .wrapper form .row i{
     position: absolute;
     width: 47px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     height: 100%;
     color: #fff;
     font-size: 18px;
@@ -123,13 +131,16 @@ text-decoration: none;
     article{
         padding-bottom: 3vh;
     }
-    p.logo{
-        font-size: 10vw;
-            position: absolute;
-            left: 52vw;
-            top: 2.9vh;
-            z-index: 1;
-            width: 10vw;
+    p.logohome a{
+        font-size: 5vw;
+        position: relative;
+        left: 6.5vw;
+        top: -1vh;
+        z-index: 1;
+        width: 10vw;
+        color: black;
+        text-decoration: underline;
+        font-family: Bebas Neue, sans-serif;
         }
     section.productoshome article p.nameemp{
         font-family: Bebas Neue, sans-serif;

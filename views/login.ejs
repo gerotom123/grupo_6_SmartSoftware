@@ -16,28 +16,44 @@
 </head>
 
 <body class="loginbody">
+    
     <header class="headerhome">
 <p class="logologin"><a href="/" class="logologin">HEAVENLY</a></p>
     </header>
     <div class="container">
         <div class="wrapper">
             <div class="title"><span>Login</span></div>
-            <form action="#">
+            <form action="/login" method="POST">
                 <div class="row">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Email o Telefono" required>
+                    <label for="email"></label>
+                    <input type="text" id='email' name="email" placeholder="Email" required>
                 </div>
                 <div class="row">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Constraseña" required>
+                    <label for="password"></label>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
                 </div>
+                <input class='recordameinput' type="checkbox" id="recordame" name="recordame">
+                <label class="recordamelabel" for="recordame">Recordar cuenta</label><br><br>
+            
                 <div class="pass"><a href="#">¿Olvidaste la constraseña?</a></div>
+                <% if(typeof errors != 'undefined') { %>
+<ul>
+<% for (let i = 0; i < errors.length; i++) {%> 
+    <li>
+        - <%=errors[i].msg%> 
+    </li>
+    <% } %> 
+</ul>
+<% } %> 
                 <div class="row button">
                     <input type="submit" value="Entrar">
                 </div>
-                <div class="signup-link">¿No está registrado? <a href="#">Registrarse</a></div>
+                <div class="signup-link">¿No está registrado? <a href="/register">Registrarse</a></div>
             </form>
         </div>
+        
     </div>
 </body>
 

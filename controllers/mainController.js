@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const {check, validationResult, body} = require('express-validator')
 const { stringify } = require('querystring');
 const { CLIENT_RENEG_LIMIT } = require('tls');
 
@@ -70,6 +71,44 @@ const controlador = {
         products[idProducto].descripcion= camposModificados.descripcion
         fs.writeFileSync(productsFilePath,JSON.stringify(products))       
         res.redirect('/')
+    },
+    processLogin: (req,res) =>{
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+        const usersJSON = fs.readFileSync('users.json',{ encoding:'utf8'})
+        let users;
+        if (usersJSON == ''){
+            users = []
+        }else{
+            users = JSON.parse(usersJSON)
+        }
+        for(let i = 0; i< users.length ; i++){
+            if (users[i].email == req.body.email){
+                if (bcrypt.campareSync(req.body.password, users[i].password)){
+                    let usuarioALoguearse = users[i]
+                    break;
+                }
+            }
+        }
+        if(usuarioALoguearse == undefined){
+            return res.render('login', {errors: [
+                {
+                msg: 'Credenciales inválidas'
+                }
+            ]});
+        } 
+        req.session.usuarioLogueado = usuarioALoguearse
+
+        if (req.body.recordame != undefined){
+            res.cookie('recordame',usuarioALoguearse.email,{
+                maxAge: 60000
+            })
+        }
+
+        res.render('Exitoso')
+        }else{
+            return res.render('login', {errors: errors.errors});
+        }
     }
 }
 
