@@ -7,6 +7,9 @@ const { CLIENT_RENEG_LIMIT } = require('tls');
 const productsFilePath = path.join(__dirname, '../archivos/listaProductos.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const usersFilePath = path.join(__dirname, '../archivos/listaUsuarios.json');
+const users= JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
+
 
 const controlador = {
     home:(req,res)=>{           
@@ -35,6 +38,10 @@ const controlador = {
             
         res.render('crearProducto');
     },
+    crearUsuario:(req,res) =>{ 
+            
+        res.render('crearUsuario');
+    },
     productoCreado:(req,res) =>{
      
         const filePath = `/img/${req.file.filename}`
@@ -42,6 +49,15 @@ const controlador = {
         documento.url = filePath
         products.push(documento)
         fs.writeFileSync(productsFilePath,JSON.stringify(products))            
+        res.redirect('/');
+    },
+    usuarioCreado:(req,res) =>{
+     console.log(req.file)
+        const filePath = `/img/${req.file.originalname}`
+        let documento = req.body
+        documento.url = filePath
+        users.push(documento)
+        fs.writeFileSync(usersFilePath,JSON.stringify(users))            
         res.redirect('/');
     },
     eliminarProducto: (req,res)=>{
