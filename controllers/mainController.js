@@ -102,10 +102,11 @@ const controlador = {
         }else{
             users = JSON.parse(usersJSON)
         }
+        let usuarioALoguearse
         for(let i = 0; i< users.length ; i++){
             if (users[i].email == req.body.email){
                 if (bcrypt.campareSync(req.body.password, users[i].password)){
-                    let usuarioALoguearse = users[i]
+                    usuarioALoguearse = users[i]
                     break;
                 }
             }
@@ -121,7 +122,7 @@ const controlador = {
 
         if (req.body.recordame != undefined){
             res.cookie('recordame',usuarioALoguearse.email,{
-                maxAge: 60000
+                maxAge: 108000000
             })
         }
 
