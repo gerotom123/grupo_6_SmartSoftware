@@ -15,8 +15,8 @@ const users= JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
 
 const controlador = {
     home:(req,res)=>{
-        console.log(users)    
-        console.log(fs.readFileSync(usersFilePath, 'utf-8'))       
+         
+        
        res.render('home', {
            'productos': products
        });
@@ -56,7 +56,7 @@ const controlador = {
         res.redirect('/');
     },
     usuarioCreado:(req,res) =>{
-     console.log(req.file)
+  
         const filePath = `/img/${req.file.originalname}`
         let documento = req.body
         documento.url = filePath
