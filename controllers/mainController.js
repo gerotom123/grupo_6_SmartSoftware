@@ -28,7 +28,7 @@ const controlador = {
         res.render('carrito');
 },
     register:(req,res)=>{
-        res.render('register');
+        res.render('crearUsuario');
 },
 
     productoDetalle:(req,res)=>{
@@ -93,19 +93,13 @@ const controlador = {
         res.redirect('/')
     },
     processLogin: (req,res) =>{
-        let errors = validationResult(req);
-        if(errors.isEmpty()){
-        const usersJSON = fs.readFileSync('listaUsuarios.json',{ encoding:'utf-8'})
-        let users;
-        if (usersJSON == ''){
-            users = []
-        }else{
-            users = JSON.parse(usersJSON)
-        }
         let usuarioALoguearse
         for(let i = 0; i< users.length ; i++){
             if (users[i].email == req.body.email){
-                if (bcrypt.campareSync(req.body.password, users[i].password)){
+                console.log(bcrypt.compareSync( users[i].contrasena,req.body.password))
+               
+                if (bcrypt.compareSync( req.body.password,users[i].contrasena)){
+                    
                     usuarioALoguearse = users[i]
                     break;
                 }
@@ -126,10 +120,8 @@ const controlador = {
             })
         }
 
-        res.render('Exitoso')
-        }else{
-            return res.render('login', {errors: errors.errors});
-        }
+        res.redirect('/')
+    
     }
 }
 

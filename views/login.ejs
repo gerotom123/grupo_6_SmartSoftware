@@ -36,17 +36,19 @@
                 </div>
                 <input class='recordameinput' type="checkbox" id="recordame" name="recordame">
                 <label class="recordamelabel" for="recordame">Recordar cuenta</label><br><br>
-            
+                <ul>
+                    <% if(typeof errors != 'undefined') { %>
+
+                    <% for (let i = 0; i < errors.length; i++) {%> 
+                        <li class="warning">
+                            - <%=errors[i].msg%> 
+                        </li>
+                        <% } %> 
+                    </ul>
+                    <% } %> 
+                 
                 <div class="pass"><a href="#">¿Olvidaste la constraseña?</a></div>
-                <% if(typeof errors != 'undefined') { %>
-<ul>
-<% for (let i = 0; i < errors.length; i++) {%> 
-    <li>
-        - <%=errors[i].msg%> 
-    </li>
-    <% } %> 
-</ul>
-<% } %> 
+
                 <div class="row button">
                     <input type="submit" value="Entrar">
                 </div>
